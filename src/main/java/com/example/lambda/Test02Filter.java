@@ -3,27 +3,30 @@ package com.example.lambda;
 import java.util.List;
 
 /**
- *
  * @author MikeW
  */
 public class Test02Filter {
-  
-  public static void main(String[] args) {
 
-    List<Person> pl = Person.createShortList();
-    
-    SearchCriteria search = SearchCriteria.getInstance();
-    
-    System.out.println("\n=== Western Pilot Phone List ===");
+    public static void main(String[] args) {
 
-    pl.stream().filter(search.getCriteria("allPilots"))
-      .forEach(Person::printWesternName);
-    
-   
-    System.out.println("\n=== Eastern Draftee Phone List ===");
+        List<Person> pl = Person.createShortList();
 
-    pl.stream().filter(search.getCriteria("allDraftees"))
-      .forEach(Person::printEasternName);
-    
-  }
+        SearchCriteria search = SearchCriteria.getInstance();
+
+        System.out.println("\n=== Western Pilot Phone List ===");
+
+        pl.stream()
+                .filter(search.getCriteria("allPilots"))
+                .forEach(Person::printWesternName);
+
+
+        System.out.println("\n=== Eastern Draftee Phone List ===");
+
+        pl.stream()
+                .filter(search.getCriteria("allDraftees"))
+                .peek(System.out::println)
+                .forEach(Person::printEasternName);
+
+
+    }
 }

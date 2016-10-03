@@ -11,6 +11,7 @@ public class Main {
     Test02Filter.main(args);
     Test03toList.main(args);
     Test04Map.main(args);
+    Test05ComparatorSort.main(args);
 
   }
 }
