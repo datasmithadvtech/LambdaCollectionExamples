@@ -16,7 +16,7 @@ public class Test05ComparatorSort {
         System.out.println("\n=== Persons Sorted By Last Name and First Name===");
 
         //Why does this give an error when I combine comparing and personComparator into one line?
-        Comparator<Person> comparing = Comparator.comparing(person-> person.getSurName());
+        Comparator<Person> comparing = Comparator.comparing(person -> person.getSurName());
         Comparator<Person> personComparator = comparing.thenComparing(person -> person.getGivenName());
         personList.sort(personComparator);
 
