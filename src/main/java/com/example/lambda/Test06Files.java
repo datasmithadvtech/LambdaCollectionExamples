@@ -23,7 +23,7 @@ public class Test06Files {
             List<Airport> airportList = lines
                     .skip(1)
                     //.peek(stringConsumer)
-                    .map(line -> Airport.createAirport(line))
+                    .map(Airport::createAirport)
                     .collect(Collectors.toList());
 
             airportList.forEach(System.out::println);
